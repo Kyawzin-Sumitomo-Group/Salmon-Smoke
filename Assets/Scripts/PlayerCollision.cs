@@ -10,8 +10,6 @@ public class PlayerCollision : MonoBehaviour {
 	void Start () {
 		gm = GameObject.FindGameObjectWithTag ("GameController");
 		gmScript = gm.GetComponent<GameManager> ();
-		Debug.Log (gm);
-		Debug.Log (gmScript);
 	}
 	
 	// Update is called once per frame
@@ -21,7 +19,6 @@ public class PlayerCollision : MonoBehaviour {
 
 	void OnCollisionEnter2D (Collision2D col) {
 		if (col.gameObject.tag != "Boundaries") {
-			Debug.Log("Collision!!!!");
 			gmScript.DestroyPiece();
 			gmScript.NewPiece();
 		}
