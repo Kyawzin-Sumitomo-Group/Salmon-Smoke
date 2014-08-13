@@ -27,17 +27,13 @@ public class Controls : MonoBehaviour {
 	// physics calcs here
 	void FixedUpdate () {
 
-
 		//rotation
 		this.rigidbody2D.angularVelocity = mouseXDelta * rotateSensitivity;
 
-		//is addForce better to use?
+		//velocity
+		this.rigidbody2D.velocity = Vector2.right * hspeed+Vector2.up * mouseYDelta * moveSensitivity;
 
-		//left/right
-		this.rigidbody2D.AddForce(Vector2.right * hspeed);
-
-		//up/down
-		this.rigidbody2D.velocity = Vector2.up * mouseYDelta * moveSensitivity;
+		//this.rigidbody2D.constantForce.force = Vector2.right * hspeed;
 
 	}
 }
