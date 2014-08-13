@@ -1195,6 +1195,8 @@ MonoBehaviour:
   ySmooth: 8
   maxXAndY: {x: 149, y: 0}
   minXAndY: {x: -8, y: 0}
+  offsetX: -1.20000005
+  offsetY: 0
 --- !u!1001 &1675699841
 Prefab:
   m_ObjectHideFlags: 0
