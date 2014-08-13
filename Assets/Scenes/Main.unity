@@ -310,7 +310,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 01c3dcf9d65834b289dbefe07d5adfae, type: 2}
   m_PrefabInternal: {fileID: 438035457}
   m_GameObject: {fileID: 547049030}
-  m_LocalRotation: {x: 0, y: 0, z: .707106829, w: .707106709}
+  m_LocalRotation: {x: 0, y: 0, z: .707106888, w: .707106769}
   m_LocalPosition: {x: 153.439529, y: -.0247514434, z: 0}
   m_LocalScale: {x: 10.6279793, y: .463175565, z: .92635107}
   m_Children: []
@@ -458,7 +458,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 01c3dcf9d65834b289dbefe07d5adfae, type: 2}
   m_PrefabInternal: {fileID: 1675699841}
   m_GameObject: {fileID: 664960355}
-  m_LocalRotation: {x: 0, y: 0, z: .707106829, w: .707106709}
+  m_LocalRotation: {x: 0, y: 0, z: .707106888, w: .707106769}
   m_LocalPosition: {x: -10.1639519, y: -.0247712135, z: 0}
   m_LocalScale: {x: 10.5751619, y: .463175535, z: .92635107}
   m_Children: []
@@ -511,6 +511,10 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 01c3dcf9d65834b289dbefe07d5adfae, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 01c3dcf9d65834b289dbefe07d5adfae, type: 2}
   m_RootGameObject: {fileID: 1824425707}
@@ -554,6 +558,10 @@ Prefab:
     - target: {fileID: 400000, guid: 01c3dcf9d65834b289dbefe07d5adfae, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 01c3dcf9d65834b289dbefe07d5adfae, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 01c3dcf9d65834b289dbefe07d5adfae, type: 2}
@@ -662,7 +670,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSensitivity: 10
   rotateSensitivity: 300
-  hspeed: 10
+  hspeed: 5
 --- !u!1 &989495576
 GameObject:
   m_ObjectHideFlags: 0
@@ -676,7 +684,7 @@ GameObject:
   - 61: {fileID: 989495578}
   m_Layer: 0
   m_Name: Boundary
-  m_TagString: Boundaries
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -747,7 +755,7 @@ GameObject:
   - 61: {fileID: 1146996561}
   m_Layer: 0
   m_Name: Boundary
-  m_TagString: Boundaries
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1031,6 +1039,10 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 01c3dcf9d65834b289dbefe07d5adfae, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 01c3dcf9d65834b289dbefe07d5adfae, type: 2}
   m_RootGameObject: {fileID: 1681455295}
@@ -1082,6 +1094,10 @@ Prefab:
     - target: {fileID: 400000, guid: 01c3dcf9d65834b289dbefe07d5adfae, type: 2}
       propertyPath: m_LocalScale.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 01c3dcf9d65834b289dbefe07d5adfae, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 01c3dcf9d65834b289dbefe07d5adfae, type: 2}
@@ -1270,7 +1286,7 @@ GameObject:
   - 61: {fileID: 1681455297}
   m_Layer: 0
   m_Name: Boundary
-  m_TagString: Boundaries
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1393,7 +1409,7 @@ GameObject:
   - 61: {fileID: 1824425708}
   m_Layer: 0
   m_Name: Boundary
-  m_TagString: Boundaries
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1498,6 +1514,10 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 01c3dcf9d65834b289dbefe07d5adfae, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 01c3dcf9d65834b289dbefe07d5adfae, type: 2}
   m_RootGameObject: {fileID: 989495576}
@@ -1516,7 +1536,7 @@ GameObject:
   - 61: {fileID: 2091492111}
   m_Layer: 0
   m_Name: Boundary
-  m_TagString: Boundaries
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

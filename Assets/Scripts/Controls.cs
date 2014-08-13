@@ -29,7 +29,7 @@ public class Controls : MonoBehaviour {
 		mouseXDelta = Input.GetAxis ("Mouse X");
 
 		//rotation
-		//this.rigidbody2D.angularVelocity = mouseXDelta * rotateSensitivity;
+		this.rigidbody2D.angularVelocity = mouseXDelta * rotateSensitivity;
 
 		//velocity
 		this.rigidbody2D.velocity = Vector2.right * hspeed+Vector2.up * mouseYDelta * moveSensitivity;

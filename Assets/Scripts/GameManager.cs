@@ -18,9 +18,9 @@ public class GameManager : MonoBehaviour {
 
 	public void NewPiece() {
 		Player.transform.position = SpawnPoint;
-		GameObject go = (GameObject)Instantiate(Resources.LoadAssetAtPath("Assets/Prefabs/PlayerLine.prefab", typeof(GameObject)));
+		GameObject go = (GameObject)Instantiate(Resources.LoadAssetAtPath("Assets/Prefabs/PlayerDiamond.prefab", typeof(GameObject)));
 		go.transform.parent = Player.transform;
-		go.transform.position = Vector3.zero;
+		go.transform.localPosition = Vector3.zero;
 	}
 	public void DestroyPiece() {
 		GameObject.Destroy (Player.transform.GetChild (0).gameObject);
