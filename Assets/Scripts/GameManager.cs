@@ -4,10 +4,11 @@ using System.Collections;
 public class GameManager : MonoBehaviour {
 
 	public GameObject Player;
+	private Vector3 SpawnPoint;
 
 	// Use this for initialization
 	void Start () {
-	
+		SpawnPoint = Player.transform.position;
 	}
 	
 	// Update is called once per frame
@@ -16,10 +17,16 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void NewPiece() {
-		GameObject go = (GameObject)Instantiate(Resources.LoadAssetAtPath("Assets/Prefabs/PlayerDiamond.prefab", typeof(GameObject)));
+		Player.transform.position = SpawnPoint;
+		GameObject go = (GameObject)Instantiate(Resources.LoadAssetAtPath("Assets/Prefabs/PlayerLine.prefab", typeof(GameObject)));
 		go.transform.parent = Player.transform;
+		go.transform.position = Vector3.zero;
 	}
 	public void DestroyPiece() {
 		GameObject.Destroy (Player.transform.GetChild (0).gameObject);
+	}
+	public void RespawnPlayer() {
+		Player.transform.DetachChildren ();
+		NewPiece ();
 	}
 }

@@ -19,16 +19,17 @@ public class Controls : MonoBehaviour {
 
 	//graphics and controls here
 	void Update () {
-		mouseYDelta = Input.GetAxis ("Mouse Y");
-		mouseXDelta = Input.GetAxis ("Mouse X");
 
 	}
 
 	// physics calcs here
 	void FixedUpdate () {
 
+		mouseYDelta = Input.GetAxis ("Mouse Y");
+		mouseXDelta = Input.GetAxis ("Mouse X");
+
 		//rotation
-		this.rigidbody2D.angularVelocity = mouseXDelta * rotateSensitivity;
+		//this.rigidbody2D.angularVelocity = mouseXDelta * rotateSensitivity;
 
 		//velocity
 		this.rigidbody2D.velocity = Vector2.right * hspeed+Vector2.up * mouseYDelta * moveSensitivity;
