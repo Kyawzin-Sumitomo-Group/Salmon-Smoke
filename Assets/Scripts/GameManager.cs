@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		SpawnPoint = Player.transform.position;
+
+		GenerateLevel ();
+
 	}
 	
 	// Update is called once per frame
@@ -18,7 +21,7 @@ public class GameManager : MonoBehaviour {
 
 	public void NewPiece() {
 		Player.transform.position = SpawnPoint;
-		GameObject go = (GameObject)Instantiate(Resources.LoadAssetAtPath("Assets/Prefabs/PlayerDiamond.prefab", typeof(GameObject)));
+		GameObject go = (GameObject)Instantiate(Resources.LoadAssetAtPath("Assets/Prefabs/Shape.prefab", typeof(GameObject)));
 		go.transform.parent = Player.transform;
 		go.transform.localPosition = Vector3.zero;
 	}
@@ -29,4 +32,14 @@ public class GameManager : MonoBehaviour {
 		Player.transform.DetachChildren ();
 		NewPiece ();
 	}
+
+	public void GenerateLevel() {
+			
+		for(int i = 0; i < 20; i++) {
+			GameObject shape = (GameObject)Instantiate(Resources.LoadAssetAtPath("Assets/Prefabs/Shape.prefab", typeof(GameObject)));
+			shape.transform.position = new Vector3(i*7,Random.Range (-5f,5f),0);
+		}
+
+	}
+
 }
