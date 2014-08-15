@@ -4,16 +4,14 @@ using System.Collections;
 public class GameManager : MonoBehaviour {
 
 	public GameObject Player;
+	public GameObject Goal;
 	private Vector3 SpawnPoint = new Vector3(-8,0,0);
 	public float NextGoalDistance = 5;
-	private bool GoalReached = false;
+	private bool GoalReached = true;
 
 	// Use this for initialization
 	void Start () {
-		SpawnPoint = Player.transform.position;
-
-		GenerateLevel ();
-
+		//GenerateLevel ();
 	}
 	
 	// Update is called once per frame
@@ -21,11 +19,12 @@ public class GameManager : MonoBehaviour {
 	
 	}
 
-	public void NewPiece() {
+	public GameObject NewPiece() {
 		Player.transform.position = SpawnPoint;
 		GameObject go = (GameObject)Instantiate(Resources.LoadAssetAtPath("Assets/Prefabs/Shape.prefab", typeof(GameObject)));
 		go.transform.parent = Player.transform;
 		go.transform.localPosition = Vector3.zero;
+		return go;
 	}
 
 	public void DestroyPiece() {
@@ -34,15 +33,10 @@ public class GameManager : MonoBehaviour {
 
 	public void RespawnPlayer() {
 		Player.transform.DetachChildren ();
-		NewPiece ();
+		GameObject newPiece = NewPiece ();
 		if (GoalReached) {
-			RespawnGoal();
+			Goal.GetComponent<Goal>().RespawnGoal(newPiece);
 		}
-	}
-
-	public void RespawnGoal() {
-
-		GoalReached = false;
 	}
 
 	public void GenerateLevel() {

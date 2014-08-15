@@ -38,12 +38,12 @@ public class Shape : MonoBehaviour {
 		renderer.material.shader = Shader.Find ("Sprites/Default");
 
 		//texture
-		Texture2D tex = new Texture2D(1, 1);
-		tex.SetPixel(0, 0, Color.green);
-		tex.Apply();
+		//Texture2D tex = new Texture2D(1, 1);
+		//tex.SetPixel(0, 0, Color.green);
+		//tex.Apply();
 
 		//material
-		renderer.material.mainTexture = tex;
+		//renderer.material.mainTexture = tex;
 		renderer.material.color = Color.green;
 	}
 
@@ -68,6 +68,9 @@ public class Shape : MonoBehaviour {
 		//collider
 		PolygonCollider2D collider = (PolygonCollider2D)gameObject.AddComponent (typeof(PolygonCollider2D));
 		collider.points = _ConvertVector3Array(m.vertices);
+		collider.sharedMaterial = new PhysicsMaterial2D ();
+		collider.sharedMaterial.friction = 0;
+		collider.sharedMaterial.bounciness = 0;
 
 		return m;
 	}
