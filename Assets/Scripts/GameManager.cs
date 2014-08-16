@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		GenerateLevel ();
+		//GenerateLevel ();
 	}
 	
 	// Update is called once per frame
@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour {
 
 	public GameObject NewPiece() {
 		Player.transform.position = SpawnPoint;
-		GameObject go = (GameObject)Instantiate(Resources.LoadAssetAtPath("Assets/Prefabs/Shape.prefab", typeof(GameObject)));
+		GameObject go = (GameObject)Instantiate(Resources.Load("Prefabs/Shape", typeof(GameObject)));
 		go.transform.parent = Player.transform;
 		go.transform.localPosition = Vector3.zero;
 		return go;

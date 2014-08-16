@@ -70,7 +70,7 @@ public class Shape : MonoBehaviour {
 		collider.points = _ConvertVector3Array(m.vertices);
 		collider.sharedMaterial = new PhysicsMaterial2D ();
 		collider.sharedMaterial.friction = 0;
-		collider.sharedMaterial.bounciness = 10;
+		collider.sharedMaterial.bounciness = 0;
 
 		return m;
 	}
