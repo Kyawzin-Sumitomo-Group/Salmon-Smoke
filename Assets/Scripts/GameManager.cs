@@ -7,7 +7,10 @@ public class GameManager : MonoBehaviour {
 	public GameObject Goal;
 	private Vector3 SpawnPoint = new Vector3(-8,0,0);
 	public float NextGoalDistance = 5;
-	private bool GoalReached = true;
+	
+	private float timeSinceRespawn;
+	private int score = 0;
+
 
 	// Use this for initialization
 	void Start () {
@@ -19,6 +22,14 @@ public class GameManager : MonoBehaviour {
 	
 	}
 
+	void OnGUI() {
+
+		GUIStyle style = GUI.skin.GetStyle ("label");
+		style.fontSize = 30;
+
+		GUI.Label (new Rect(Screen.width-110,10,100,50),""+score,style);
+	}
+
 	public GameObject NewPiece() {
 		Player.transform.position = SpawnPoint;
 		GameObject go = (GameObject)Instantiate(Resources.Load("Prefabs/Shape", typeof(GameObject)));
@@ -27,14 +38,20 @@ public class GameManager : MonoBehaviour {
 		return go;
 	}
 
-	public void DestroyPiece() {
-		GameObject.Destroy (Player.transform.GetChild (0).gameObject);
-	}
+	public void RespawnPlayer(bool GoalReached) {
 
-	public void RespawnPlayer() {
+		//reload level if collide at spawn point
+		float timeDiff = Time.time - timeSinceRespawn;
+		timeSinceRespawn = Time.time;
+		if (timeDiff < .1) {
+			Application.LoadLevel(Application.loadedLevel);
+		}
+
 		Player.transform.DetachChildren ();
 		GameObject newPiece = NewPiece ();
+
 		if (GoalReached) {
+			score++;
 			Goal.GetComponent<Goal>().RespawnGoal(newPiece);
 		}
 	}
