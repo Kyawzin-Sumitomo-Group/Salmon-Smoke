@@ -18,8 +18,10 @@ public class PlayerCollision : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D (Collision2D col) {
-		if (col.gameObject.tag != "Boundaries") {
-			gmScript.RespawnPlayer();
+		if (col.gameObject.tag == "Goal") {
+			gmScript.RespawnPlayer (true);
+		} else if (col.gameObject.tag != "Boundaries") {
+			gmScript.RespawnPlayer(false);
 		}
 	}
 }
