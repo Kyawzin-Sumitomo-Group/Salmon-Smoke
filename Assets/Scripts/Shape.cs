@@ -31,7 +31,7 @@ public class Shape : MonoBehaviour {
 
 		//set mesh/collider
 		MeshFilter meshFilter = (MeshFilter)gameObject.AddComponent(typeof(MeshFilter));
-		meshFilter.mesh = CreateMeshCollider(2, 2);
+		meshFilter.mesh = CreateMeshCollider(3, 1);
 
 		//renderer
 		MeshRenderer renderer = gameObject.AddComponent(typeof(MeshRenderer)) as MeshRenderer;
@@ -70,7 +70,7 @@ public class Shape : MonoBehaviour {
 		collider.points = _ConvertVector3Array(m.vertices);
 		collider.sharedMaterial = new PhysicsMaterial2D ();
 		collider.sharedMaterial.friction = 0;
-		collider.sharedMaterial.bounciness = 0;
+		collider.sharedMaterial.bounciness = 10;
 
 		return m;
 	}
