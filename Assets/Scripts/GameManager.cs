@@ -7,11 +7,13 @@ public class GameManager : MonoBehaviour {
 	public GameObject Goal;
 	private Vector3 SpawnPoint = new Vector3(-8,0,0);
 	public float NextGoalDistance = 5;
+
 	private bool GoalReached = true;
+	private float timeSinceRespawn;
 
 	// Use this for initialization
 	void Start () {
-		GenerateLevel ();
+		//GenerateLevel ();
 	}
 	
 	// Update is called once per frame
@@ -32,6 +34,14 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void RespawnPlayer() {
+
+		//reload level if collide at spawn point
+		float timeDiff = Time.time - timeSinceRespawn;
+		timeSinceRespawn = Time.time;
+		if (timeDiff < .1) {
+			Application.LoadLevel(Application.loadedLevel);
+		}
+
 		Player.transform.DetachChildren ();
 		GameObject newPiece = NewPiece ();
 		if (GoalReached) {
